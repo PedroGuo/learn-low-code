@@ -12,18 +12,17 @@ export interface MaterialComponentProps {
 }
 
 export interface Material {
-    id?: string;
+    id: string;
     name: string;
     icon: string;
     component: string;
     props:MaterialComponentProps;
     children?: Material[];
 }
-
-export const data: Material[] = [
+export const data: Partial<Material>[]= [
     {
       name: "图片",
-      icon: "icon-image",
+      icon: "icon-tupian",
       component: "EXEImg",
       props: {
         imagePath: {
@@ -40,7 +39,7 @@ export const data: Material[] = [
     },
     {
       name: "按钮",
-      icon: "icon-aviation",
+      icon: "icon-button",
       component: "EXEButton",
       props: {
         btnText: {

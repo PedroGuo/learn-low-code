@@ -11,7 +11,7 @@
         :key="index"
         class="control-models-item"
       >
-        <i class="iconfont" :class="item.icon">{{ item.icon }}</i>
+        <i class="iconfont" :class="item.icon"></i>
         <span class="f13">{{ item.name }}</span>
       </div>
     </draggable>
