@@ -90,7 +90,7 @@ let curSchemaProps = computed(() => curComponent && curComponent.value.props);
     .panel {
       width: 100%;
       max-width: 900px;
-
+      position: relative;
       .panel-content {
         width: 375px;
         margin: 50px auto;

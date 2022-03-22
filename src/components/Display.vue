@@ -6,6 +6,12 @@
       </component>
     </WidgetShape>
   </draggable>
+  <div class="info">
+    <h3>当前编辑属性</h3>
+    <p>
+      {{ list }}
+    </p>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -49,5 +55,15 @@ const spread = (item: Material) => {
 .nest-none {
   background: url("https://file.qingflow.com/assets/empty-content/applying-editorial-tips.png");
   background-size: 100% 100%;
+}
+.info {
+  position: absolute;
+  left: 0;
+  top: 30px;
+  width: 160px;
+  font-size: 12px;
+  h3 {
+    margin-bottom: 10px;
+  }
 }
 </style>
