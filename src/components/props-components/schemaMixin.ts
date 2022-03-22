@@ -1,12 +1,13 @@
-import { ref, watch } from 'vue'
+import { ref, watch, toRefs } from 'vue'
 export default function(props, context) {
         const eValue = ref(props.value)
+        const { value } = toRefs(props)
 
         watch(eValue, (value) => {
             context.emit("update:modelValue",value);
         })
-        watch(props, (newValue) => {
-            eValue.value = newValue.value
+        watch(value, (newValue) => {
+            eValue.value = newValue
         })
 
         return {

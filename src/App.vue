@@ -26,12 +26,12 @@
 
 
 <script setup lang="ts">
+import { provide, ref, computed } from "vue";
 import { data } from "./components/materia";
 import { Material } from "./components/materia";
 import MaterialComponent from "./components/Material.vue";
 import Display from "./components/Display.vue";
 import PropsEdit from "./components/PropsEdit.vue";
-import { provide, ref, computed } from "vue";
 const curComponent = ref<Material>('');
 const updateCurComponent = (value: Material) => {
   curComponent.value = value;
@@ -47,7 +47,7 @@ let curSchemaProps = computed(() => curComponent && curComponent.value.props);
 .control {
   display: flex;
   height: 100vh;
-
+  background: #e3e3e3;
   .control-models {
     width: 236px;
     height: 100vh;
@@ -102,7 +102,7 @@ let curSchemaProps = computed(() => curComponent && curComponent.value.props);
 
   .control-config {
     width: 360px;
-    height: calc(100vh - 60px);
+    height: 100vh;
     overflow: auto;
     animation-duration: 0.2s;
     padding: 10px;

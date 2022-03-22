@@ -1,5 +1,4 @@
 <template>
-  <div class="control-models">
     <draggable
       :list="materialData"
       :group="{ name: 'material', pull: 'clone', put: false }"
@@ -15,23 +14,21 @@
         <span class="f13">{{ item.name }}</span>
       </div>
     </draggable>
-  </div>
 </template>
 
 <script setup lang="ts">
 import { Material } from './materia'
 import { getRandomCode } from '../utils/index'
 
-defineProps<{ materialData: Material[] }>()
+defineProps<{ materialData: Partial<Material>[] }>()
 
-const handleClone = (model: Material) => {
+const handleClone = (model: Material): Material => {
       const obj = JSON.parse(JSON.stringify(model))
       return {
         ...obj,
         id: getRandomCode(8),
       };
 }
-
 </script>
 
 <style lang="scss">
