@@ -9,8 +9,10 @@ import { schemaComponents } from './components/props-components/index'
 import './scss/reset.scss'
 
 const app = createApp(App)
-for (const key in schemaComponents) {
-    app.component(key, schemaComponents[key])
+for (const name in schemaComponents) {
+    if (schemaComponents[name]) {
+        app.component(name, schemaComponents[name])
+    }
 }
 app.component('draggable', VueDraggableNext)
 app.component('EXEImg', EXEImg)

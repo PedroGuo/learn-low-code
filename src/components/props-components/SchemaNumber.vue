@@ -4,14 +4,9 @@
   </PropsLabel>
 </template>
 
-<script lang="ts">
-import useSchemaMixin from "./schemaMixin";
-export default {
-  name: "SchemaNumber",
-  props: ["value", "options", "label"],
-  setup(props, context) {
-    const { eOptions, eValue, label } = useSchemaMixin(props, context);
-    return { eOptions, eValue, label };
-  },
-};
+<script setup lang="ts">
+import { getCurrentInstance } from 'vue'
+import useSchema from "./schemaHook";
+const  context = getCurrentInstance();
+const { eOptions, eValue, label } = useSchema(context?.attrs, context?.emit);
 </script>

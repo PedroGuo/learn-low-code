@@ -47,7 +47,7 @@ let curSchemaProps = computed(() => curComponent && curComponent.value.props);
 .control {
   display: flex;
   height: 100vh;
-  background: #e3e3e3;
+  background: #f7f8fa80;
   .control-models {
     width: 236px;
     height: 100vh;

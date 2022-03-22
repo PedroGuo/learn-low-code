@@ -2,21 +2,17 @@
   <PropsLabel :label="label">
     <el-input
       v-model="eValue"
-      v-bind="eOptions"
-      :placeholder="eOptions.placeholder"
+      v-bind="options"
+      :placeholder="options.placeholder"
       size="small"
     ></el-input>
   </PropsLabel>
 </template>
 
-<script lang="ts">
-import useSchemaMixin from "./schemaMixin";
-export default {
-  name: "SchemaString",
-  props: ["value", "options", "label"],
-  setup(props, context) {
-    const { eOptions, eValue, label } = useSchemaMixin(props, context);
-    return { eOptions, eValue, label };
-  },
-};
+<script setup lang="ts">
+import { getCurrentInstance } from 'vue'
+import useSchema from "./schemaHook";
+const  context = getCurrentInstance();
+const { eOptions, eValue, label } = useSchema(context?.attrs, context?.emit);
+const options = Object.assign({placeholder: '请输入内容'}, eOptions.value)
 </script>

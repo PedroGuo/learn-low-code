@@ -6,12 +6,6 @@
       </component>
     </WidgetShape>
   </draggable>
-  <div class="info">
-    <h3>当前编辑属性</h3>
-    <p>
-      {{ list }}
-    </p>
-  </div>
 </template>
 
 <script setup lang="ts">
