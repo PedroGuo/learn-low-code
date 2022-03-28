@@ -1,11 +1,11 @@
-import { CommonStringField  } from './share'
-import { PropsEditModel } from './propsEdit'
+import { CommonStringField, Spread  } from './share'
+import { IPropsEditModel } from './propsEdit'
 
 
 
-export interface DisplayModel  {
+export interface IDisplayModel  {
     id: string;
     component: string;
-    props: CommonStringField<PropsEditModel>;
-    children?: DisplayModel[];
+    props: CommonStringField<IPropsEditModel>;
+    children?: IDisplayModel[];
 }

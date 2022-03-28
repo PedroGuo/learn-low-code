@@ -1,5 +1,5 @@
 // 物料模型
-export interface MaterialModel {
+export interface IMaterialModel {
     name: string;
     icon: string;
 }

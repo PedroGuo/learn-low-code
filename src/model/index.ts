@@ -1,13 +1,10 @@
 import { Spread, Merge, SetOptional } from "./share";
-import { MaterialModel } from "./material";
-import { DisplayModel } from "./display";
-import { DataSource } from "./dataSource";
+import { IMaterialModel } from "./material";
+import { IDisplayModel } from "./display";
 
 export * from "./dataSource";
 export * from "./propsEdit";
 export * from "./display";
 export * from "./material";
 
-type BaseModel = Merge<MaterialModel, DisplayModel>;
-
-export type ModelData = Spread<SetOptional<Merge<BaseModel, DataSource>, "dataSource">;>
+export type ModelData = Spread<Merge<IMaterialModel, IDisplayModel>>
