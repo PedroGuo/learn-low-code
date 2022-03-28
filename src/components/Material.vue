@@ -17,12 +17,12 @@
 </template>
 
 <script setup lang="ts">
-import { Material } from "./materia";
+import { ModelData } from "@/model";
 import { getRandomCode } from "../utils/index";
 
-defineProps<{ materialData: Partial<Material>[] }>();
+defineProps<{ materialData: Partial<ModelData>[] }>();
 
-const handleClone = (model: Material): Material => {
+const handleClone = (model: ModelData): ModelData => {
   const obj = JSON.parse(JSON.stringify(model));
   return {
     ...obj,

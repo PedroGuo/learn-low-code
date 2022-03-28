@@ -24,8 +24,9 @@
 
 <script lang="ts" setup>
 import { ref, inject, onMounted } from "vue";
-import { Material } from "../components/materia";
-defineProps<{ widget: Material }>();
+import { ModelData } from "@/model";
+import { Merge } from "@/model/share";
+defineProps<{ widget: ModelData }>();
 const show = ref(false);
 const { curComponent, updateCurComponent } = inject<any>("control");
 const { delComponentById } = inject<any>("displayPlate");

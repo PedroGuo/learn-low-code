@@ -1,26 +1,31 @@
-export type PropEditType = 'string' | 'number' | 'select'
+import { DisplayModel, MaterialModel, ModelData } from './model';
 
-export interface PropsDes {
-    label: string;
-    value: any;
-    type: PropEditType
-    options?: any;
+const material: MaterialModel = {
+    name: '图片',
+    icon: "icon-tupian"
 }
 
-export interface MaterialComponentProps {
-    [key:string]: PropsDes
+const components: DisplayModel = {
+    id: '',
+    component: "EXEImg",
+    props: {
+        imagePath: {
+            label: "图片地址",
+            type: "string",
+            value: "",
+          },
+          radius: {
+            label: "图片圆角",
+            type: "number",
+            value: 0,
+          }
+    }
 }
 
-export interface Material {
-    id: string;
-    name: string;
-    icon: string;
-    component: string;
-    props:MaterialComponentProps;
-    children?: Material[];
-}
-export const data: Partial<Material>[]= [
+
+export const data: ModelData[] = [
     {
+      id: '123',
       name: "图片",
       icon: "icon-tupian",
       component: "EXEImg",
@@ -38,6 +43,7 @@ export const data: Partial<Material>[]= [
       },
     },
     {
+      id: '456',
       name: "按钮",
       icon: "icon-button",
       component: "EXEButton",
@@ -77,5 +83,14 @@ export const data: Partial<Material>[]= [
           },
         },
       },
+      // dataSource: {
+      //   type: 'origin',
+      //   fetchType: 'ajax',
+      //   url: 'http://a.com/api/list',
+      //   methods: 'get',
+      //   params: {
+      //     hello: 'a'
+      //   }
+      // }
     },
   ];

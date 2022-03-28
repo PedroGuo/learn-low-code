@@ -27,13 +27,13 @@
 
 <script setup lang="ts">
 import { provide, ref, computed } from "vue";
-import { data } from "./components/materia";
-import { Material } from "./components/materia";
+import { DisplayModel } from "@/model";
+import { data } from "./mock";
 import MaterialComponent from "./components/Material.vue";
 import Display from "./components/Display.vue";
 import PropsEdit from "./components/PropsEdit.vue";
-const curComponent = ref<Material>('');
-const updateCurComponent = (value: Material) => {
+const curComponent = ref<DisplayModel>('');
+const updateCurComponent = (value: DisplayModel) => {
   curComponent.value = value;
 };
 provide("control", {

@@ -10,10 +10,10 @@
 
 <script setup lang="ts">
 import { ref, provide } from "vue";
-import { Material } from "./materia";
+import { ModelData } from "@/model";
+import { Merge } from "@/model/share";
 import WidgetShape from "./WidgetShape.vue";
-
-const list = ref<Material[]>([]);
+const list = ref<ModelData[]>([]);
 
 const delComponentById = (id: string) => {
   const index = list.value.findIndex((item) => item.id === id);
@@ -26,7 +26,7 @@ provide("displayPlate", {
   delComponentById,
 });
 
-const spread = (item: Material) => {
+const spread = (item: ModelData) => {
   const { props } = item;
   const target: any = {};
   for (const key in props) {

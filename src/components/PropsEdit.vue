@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import { MaterialComponentProps } from "./materia";
+import { PropsEditModel } from "@/model";
 const getComponent = (type: string) => `schema-${type}`;
-defineProps<{ schema: MaterialComponentProps }>();
+defineProps<{ schema: PropsEditModel }>();
 </script>
