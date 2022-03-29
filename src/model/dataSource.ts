@@ -16,20 +16,20 @@ export interface ILocalType {
   fields: string;
 }
 
-export interface ResponseData {
+export interface IResponseData {
   data: any;
   success: boolean;
   msg: string;
 }
 
-interface FetchHandlerType {
-  ajax(params: IOriginType): Promise<ResponseData>;
-  fetch(params: IOriginType): Promise<ResponseData>;
-  jsonp(params: IOriginType): Promise<ResponseData>;
+interface IFetchHandlerType {
+  ajax(params: IOriginType): Promise<IResponseData>;
+  fetch(params: IOriginType): Promise<IResponseData>;
+  jsonp(params: IOriginType): Promise<IResponseData>;
 }
 
 
-function normalizationFetchParams(
+function normalizationPayload(
   method: IOriginType["method"],
   params: any,
   ContentType: IOriginType["ContentType"]
@@ -70,8 +70,8 @@ const DEFAULT_DATA_SOURCE_OPTIONS: Partial<IOriginType> = {
 export class DataSourceItem {
   status = false;
   error: any;
-  private _data: ResponseData["data"];
-  static handler: FetchHandlerType = {};
+  private _data: IResponseData["data"];
+  static handler: IFetchHandlerType = {};
   private options: IOriginType;
 
   constructor(options: IOriginType) {
@@ -114,7 +114,7 @@ DataSourceItem.handler["ajax"] = function (fetchOptions) {
 
 DataSourceItem.handler["fetch"] = async function (fetchOptions) {
   const { url, method, headers, ContentType, params } = fetchOptions;
-  const payload = normalizationFetchParams(method, params, ContentType);
+  const payload = normalizationPayload(method, params, ContentType);
   let fetchParams: any;
   if (method === "GET") {
     fetchParams = {

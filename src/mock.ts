@@ -1,26 +1,5 @@
-import { DisplayModel, MaterialModel, ModelData } from './model';
+import { ModelData } from './model';
 
-const material: MaterialModel = {
-    name: '图片',
-    icon: "icon-tupian"
-}
-
-const components: DisplayModel = {
-    id: '',
-    component: "EXEImg",
-    props: {
-        imagePath: {
-            label: "图片地址",
-            type: "string",
-            value: "",
-          },
-          radius: {
-            label: "图片圆角",
-            type: "number",
-            value: 0,
-          }
-    }
-}
  // http://baidu.com
 
  // {"dataSource":"origin"}
