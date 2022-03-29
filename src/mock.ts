@@ -21,7 +21,9 @@ const components: DisplayModel = {
           }
     }
 }
+ // http://baidu.com
 
+ // {"dataSource":"origin"}
 
 export const data: ModelData[] = [
     {
@@ -34,6 +36,7 @@ export const data: ModelData[] = [
           label: "图片地址",
           type: "string",
           value: "",
+          dataSource: 'origin'
         },
         radius: {
           label: "图片圆角",

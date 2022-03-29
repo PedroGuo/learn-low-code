@@ -8,7 +8,7 @@ export interface IPropsEditModel {
     label: string;
     value: any;
     options?: any;
-    dataSource?: IOriginType | ILocalType;
+    dataSource?: IOriginType | ILocalType | 'origin' | 'local';
 }
 
 

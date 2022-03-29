@@ -1,7 +1,13 @@
 <template>
   <ul>
-    <li v-for="(item, index) in schema" :key="index" :label="item.label">
+    <li v-for="(item, index) in schema" :key="index">
+      <DataSourceComponent
+        v-if="item.dataSource"
+        v-bind="item"
+        v-model="item.value"
+      ></DataSourceComponent>
       <component
+        v-else
         :is="getComponent(item.type)"
         v-model="item.value"
         v-bind="item"
@@ -11,7 +17,8 @@
 </template>
 
 <script setup lang="ts">
-import { PropsEditModel } from "@/model";
+import DataSourceComponent from "./DataSource.vue";
+import { IPropsEditModel } from "@/model";
+defineProps<{ schema: IPropsEditModel }>();
 const getComponent = (type: string) => `schema-${type}`;
-defineProps<{ schema: PropsEditModel }>();
 </script>
